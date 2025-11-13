@@ -1,4 +1,4 @@
-package org.ldv.ecommerce_lepicerie
+package org.ldv.epicerie
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

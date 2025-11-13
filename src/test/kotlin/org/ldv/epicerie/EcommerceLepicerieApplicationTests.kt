@@ -1,4 +1,4 @@
-package org.ldv.ecommerce_lepicerie
+package org.ldv.epicerie
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
