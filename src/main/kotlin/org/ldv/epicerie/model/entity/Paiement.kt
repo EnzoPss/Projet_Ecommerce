@@ -12,9 +12,7 @@ class Paiement(
     var status_paiement: String,
 
     @OneToOne(mappedBy = "paiement",cascade = [CascadeType.ALL], orphanRemoval = true)
-    var commande: Commande? = null
-
-
+    var commandes: Commande? = null
 
 ) {
 }

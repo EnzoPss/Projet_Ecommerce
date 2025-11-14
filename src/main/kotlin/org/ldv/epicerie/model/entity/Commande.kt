@@ -19,8 +19,9 @@ class Commande(
     @JoinColumn(name = "utilisateur_id")
     var utilisateur: Utilisateur? = null,
 
+    //relation to paiement
     @OneToOne
-    @JoinColumn(name = "paiement_id")
+    @JoinColumn(name = "profile_id", referencedColumnName = "id")
     var paiement: Paiement? = null
 
 
