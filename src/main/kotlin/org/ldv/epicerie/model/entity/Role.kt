@@ -14,6 +14,5 @@ class Role(
     var utilisateurs: MutableList<Utilisateur> = mutableListOf()
 
 
-
 ) {
 }

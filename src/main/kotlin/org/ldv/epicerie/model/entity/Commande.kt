@@ -16,12 +16,12 @@ class Commande(
 
     //relation to Utilisateur
     @ManyToOne
-    @JoinColumn(name = "utilisateur_id")
+    @JoinColumn(name = "utilisateur_fkid")
     var utilisateur: Utilisateur? = null,
 
     //relation to paiement
     @OneToOne
-    @JoinColumn(name = "profile_id", referencedColumnName = "id")
+    @JoinColumn(name = "paiement_fkid")
     var paiement: Paiement? = null
 
 

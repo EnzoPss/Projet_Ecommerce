@@ -7,11 +7,11 @@ class Utilisateur(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    val id_user: Long,
-    var nom_user: String,
-    var mdp_user: String,
-    var email_user: String,
-    var adresse_user: String,
+    val id_utilisateur: Long,
+    var nom_utilisateur: String,
+    var mdp_utilisateur: String,
+    var email_utilisateur: String,
+    var adresse_utilisateur: String,
 
     //relation to Commande
     @OneToMany(mappedBy = "utilisateur",cascade = [CascadeType.ALL], orphanRemoval = true)
@@ -19,8 +19,12 @@ class Utilisateur(
 
     //relation to Role
     @ManyToOne
-    @JoinColumn(name = "utilisateur_id")
-    var role: Role? = null
+    @JoinColumn(name = "role_fkid")
+    var role: Role? = null,
 
-) {
+    //relation to Commentaire
+    @OneToMany(mappedBy = "utilisateur",cascade = [CascadeType.ALL], orphanRemoval = true)
+    var commentaires: MutableList<Commentaire> = mutableListOf(),
+
+    ) {
 }

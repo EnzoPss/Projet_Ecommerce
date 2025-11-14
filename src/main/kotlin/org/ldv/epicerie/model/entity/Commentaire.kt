@@ -9,10 +9,14 @@ class Commentaire(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    val id_com: Long,
-    val idUser: Long,
-    val idProduit: Long,
-    var texte_com: String,
-    val date_com: Date
+    val id_commentaire: Long,
+    var texte_commentaire: String,
+    val date_commentaire: Date,
+
+    //relation to Utilisateur
+    @ManyToOne
+    @JoinColumn(name = "utilisateur_fkid")
+    var utilisateur: Utilisateur? = null,
+
 ) {
 }
