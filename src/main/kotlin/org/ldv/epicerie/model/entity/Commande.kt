@@ -12,6 +12,17 @@ class Commande(
     val id_commande: Long,
     val date_commande: Date,
     var status_commande: String,
-    var prixTotal_commande: Double
+    var prixTotal_commande: Double,
+
+    //relation to Utilisateur
+    @ManyToOne
+    @JoinColumn(name = "utilisateur_id")
+    var utilisateur: Utilisateur? = null,
+
+    @OneToOne
+    @JoinColumn(name = "paiement_id")
+    var paiement: Paiement? = null
+
+
 ) {
 }

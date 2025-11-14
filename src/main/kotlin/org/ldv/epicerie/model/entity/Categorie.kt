@@ -11,5 +11,4 @@ class Categorie(
     var nom: String,
 
     ) {
-
 }

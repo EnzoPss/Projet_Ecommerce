@@ -9,5 +9,11 @@ class Role(
     @Column(nullable = false)
     val id_role: Long,
     var nom_role: String,
+
+    @OneToMany(mappedBy = "role",cascade = [CascadeType.ALL], orphanRemoval = true)
+    var utilisateurs: MutableList<Utilisateur> = mutableListOf()
+
+
+
 ) {
 }
