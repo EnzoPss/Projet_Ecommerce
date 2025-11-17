@@ -22,7 +22,16 @@ class Commande(
     //relation to paiement
     @OneToOne
     @JoinColumn(name = "paiement_fkid")
-    var paiement: Paiement? = null
+    var paiement: Paiement? = null,
+
+    //Association Many to Many avec Produit
+    @ManyToMany
+    @JoinTable(
+    name = "Commande_Produit",
+    joinColumns = [JoinColumn(name = "commande_fkid")],
+    inverseJoinColumns = [JoinColumn(name = "produit_fkid")]
+    )
+    var produits: MutableList<Produit> = mutableListOf()
 
 
 ) {

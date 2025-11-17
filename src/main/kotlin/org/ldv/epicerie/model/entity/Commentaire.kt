@@ -18,5 +18,9 @@ class Commentaire(
     @JoinColumn(name = "utilisateur_fkid")
     var utilisateur: Utilisateur? = null,
 
+    //relation to Produit
+    @ManyToOne
+    @JoinColumn(name = "produit_fkid")
+    var produit: Produit? = null,
 ) {
 }
