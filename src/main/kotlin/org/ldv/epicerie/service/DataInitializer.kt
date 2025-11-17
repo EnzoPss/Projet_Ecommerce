@@ -65,3 +65,4 @@ class DataInitializer(
         println("✅ Données initiales insérées : ${categorieDAO.count()} catégories, ${produitDAO.count()} Produits.")
     }
 }
+//
