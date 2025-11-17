@@ -5,20 +5,20 @@ import jakarta.persistence.*
 @Entity
 class QuantiteCommande (
     @EmbeddedId
-    var quantieId: QuantiteCommande_Id? = null,
+    var quantiteId: QuantiteCommande_Id? = null,
     var quantite: Long,
 
 
 
-    @MapsId("albumId")
+    @MapsId("produitId")
     @ManyToOne
-    @JoinColumn(name = "album_id")
-    var produits: Produit? = null,
+    @JoinColumn(name = "produit_id")
+    var produit: Produit? = null,
 
 
-    @MapsId("utilisateurId")
+    @MapsId("commandeId")
     @ManyToOne
-    @JoinColumn(name = "utilisateur_id")
-    var commandes: Commande? = null
+    @JoinColumn(name = "commande_id")
+    var commande: Commande? = null
 ) {
 }
