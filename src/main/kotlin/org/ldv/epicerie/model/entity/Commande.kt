@@ -31,7 +31,11 @@ class Commande(
     joinColumns = [JoinColumn(name = "commande_fkid")],
     inverseJoinColumns = [JoinColumn(name = "produit_fkid")]
     )
-    var produits: MutableList<Produit> = mutableListOf()
+    var produits: MutableList<Produit> = mutableListOf(),
+
+    // Association One to Many avec QuantiteCommande
+    @OneToMany(mappedBy = "commande", orphanRemoval = true)
+    var quantiteCommande: MutableList<QuantiteCommande> = mutableListOf()
 
 
 ) {
