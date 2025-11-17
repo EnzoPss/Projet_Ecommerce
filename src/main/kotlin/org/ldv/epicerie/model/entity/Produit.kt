@@ -7,10 +7,11 @@ class Produit(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    val id_produit: Long,
+    val id_produit: Long?=null,
     var nom_produit: String,
     var description_produit: String,
     var prix_produit: Double,
+    var lienImage_produit: String,
 
     //relation to Commentaire
     @OneToMany(mappedBy = "produit",cascade = [CascadeType.ALL], orphanRemoval = true)
@@ -27,8 +28,18 @@ class Produit(
 
     //Associaiton One to Many avec QuantiteCommande
     @OneToMany(mappedBy = "produit", orphanRemoval = true)
-    var quantiteCommande: MutableList<QuantiteCommande> = mutableListOf()
+    var quantiteCommande: MutableList<QuantiteCommande> = mutableListOf(),
+
+    //relation to Categorie
+    @ManyToMany
+    @JoinTable(
+        name = "produit_categorie",
+        joinColumns = [JoinColumn(name = "produits_id")],
+        inverseJoinColumns = [JoinColumn(name = "categories_id")]
+    )
+    open var categories: MutableList<Categorie> = mutableListOf()
 
 
 ) {
+
 }
