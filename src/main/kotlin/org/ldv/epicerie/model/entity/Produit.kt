@@ -31,15 +31,12 @@ class Produit(
     var quantiteCommande: MutableList<QuantiteCommande> = mutableListOf(),
 
     //relation to Categorie
-    @ManyToMany
-    @JoinTable(
-        name = "produit_categorie",
-        joinColumns = [JoinColumn(name = "produits_id")],
-        inverseJoinColumns = [JoinColumn(name = "categories_id")]
-    )
-    open var categories: MutableList<Categorie> = mutableListOf()
+    @ManyToOne
+    @JoinColumn(name = "categorie_id")
+    open var categorie: Categorie? = null
 
 
 ) {
+
 
 }

@@ -27,7 +27,7 @@ class DataInitializer(
         println("🚀 Initialisation des données...")
 
         // === Catégories ===
-        val catGadget = Categorie(nom_categorie = "Spiritueu")
+        val catGadget = Categorie(nom_categorie = "Spiritueux")
         val catJouet = Categorie(nom_categorie = "Vin")
         val catMaison = Categorie(nom_categorie = "Bière")
 
@@ -40,7 +40,7 @@ class DataInitializer(
             description_produit = "Montre connectée avec capteur de fréquence cardiaque et suivi d’activité.",
             prix_produit = 79.99,
             lienImage_produit = "https://example.com/images/montre-connectee.jpg",
-            categories = catGadget
+            categorie = catGadget
         )
 
 /*        val ProduitDrone = Produit(

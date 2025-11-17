@@ -10,9 +10,9 @@ class Categorie(
     var id_categorie: Long?=null,
     var nom_categorie: String,
 
-    //Association Many to Many avec Produit
-    @ManyToMany(mappedBy = "categories")
+    //Association Many to Many avec Produit {
+    @OneToMany(mappedBy = "categorie", orphanRemoval = true)
     open var produits: MutableList<Produit> = mutableListOf()
-    ) {
 
+){
 }
