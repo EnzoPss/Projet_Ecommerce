@@ -40,10 +40,10 @@ class DataInitializer(
             description_produit = "Montre connectée avec capteur de fréquence cardiaque et suivi d’activité.",
             prix_produit = 79.99,
             lienImage_produit = "https://example.com/images/montre-connectee.jpg",
-            categorie = catGadget
+            categories = catGadget
         )
 
-        val ProduitDrone = Produit(
+/*        val ProduitDrone = Produit(
             nom = "Mini drone",
             description = "Drone compact avec caméra HD et contrôle via smartphone.",
             stock = 15,
@@ -61,7 +61,7 @@ class DataInitializer(
 
             )
         )
-
+*/
         println("✅ Données initiales insérées : ${categorieDAO.count()} catégories, ${produitDAO.count()} Produits.")
     }
 }
