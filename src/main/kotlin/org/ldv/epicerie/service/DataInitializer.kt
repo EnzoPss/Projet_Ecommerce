@@ -27,41 +27,41 @@ class DataInitializer(
         println("🚀 Initialisation des données...")
 
         // === Catégories ===
-        val catGadget = Categorie(nom_categorie = "Spiritueux")
-        val catJouet = Categorie(nom_categorie = "Vin")
-        val catMaison = Categorie(nom_categorie = "Bière")
 
-        categorieDAO.saveAll(listOf(catGadget, catJouet, catMaison))
+        val catSpiritueux = Categorie(nom_categorie = "Spiritueux")
+        val catVins = Categorie(nom_categorie = "Vin")
+        val catBieres = Categorie(nom_categorie = "Bière")
+
+        categorieDAO.saveAll(listOf(catSpiritueux, catVins, catBieres))
 
         // === Produits ===
 
-        val ProduitMontre = Produit(
-            nom_produit = "Montre connectée",
-            description_produit = "Montre connectée avec capteur de fréquence cardiaque et suivi d’activité.",
-            prix_produit = 79.99,
+        val ProduitSn1 = Produit(
+            nom_produit = "spirit n°1",
+            description_produit = "numéro 1 de notre collection de spiritueux",
+            prix_produit = 29.99,
             lienImage_produit = "https://example.com/images/montre-connectee.jpg",
-            categorie = catGadget
+            categorie = catSpiritueux
         )
 
-/*        val ProduitDrone = Produit(
-            nom = "Mini drone",
-            description = "Drone compact avec caméra HD et contrôle via smartphone.",
-            stock = 15,
-            prix = 149.99,
-            lienImage = "https://example.com/images/mini-drone.jpg",
-            categorie = catGadget
+         val ProduitVn1 = Produit(
+            nom_produit = "vin n°1",
+            description_produit = "numéro 1 de notre collection de vins",
+            prix_produit = 29.99,
+            lienImage_produit = "https://example.com/images/montre-connectee.jpg",
+            categorie = catVins
         )
 
 
         // === Sauvegarde des Produits ===
         produitDAO.saveAll(
             listOf(
-                ProduitMontre,
-                ProduitDrone
+                ProduitSn1,
+                ProduitVn1,
 
             )
         )
-*/
+
         println("✅ Données initiales insérées : ${categorieDAO.count()} catégories, ${produitDAO.count()} Produits.")
     }
 }

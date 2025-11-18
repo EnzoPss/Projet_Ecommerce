@@ -17,22 +17,13 @@ class Produit(
     @OneToMany(mappedBy = "produit",cascade = [CascadeType.ALL], orphanRemoval = true)
     var commentaires: MutableList<Commentaire> = mutableListOf(),
 
-    //Association to Commande
-    @ManyToMany
-    @JoinTable(
-    name = "Produit_Commande",
-    joinColumns = [JoinColumn(name = "produit_fkid")],
-    inverseJoinColumns = [JoinColumn(name = "commande_fkid")]
-    )
-    var commandes: MutableList<Commande> = mutableListOf(),
-
     //Associaiton One to Many avec QuantiteCommande
     @OneToMany(mappedBy = "produit", orphanRemoval = true)
     var quantiteCommande: MutableList<QuantiteCommande> = mutableListOf(),
 
     //relation to Categorie
     @ManyToOne
-    @JoinColumn(name = "categorie_id")
+    @JoinColumn(name = "categorie_fkid")
     open var categorie: Categorie? = null
 
 
