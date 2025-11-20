@@ -33,7 +33,7 @@ class DataInitializer(
         val catBieres = Categorie(nom_categorie = "Bière")
 
         categorieDAO.saveAll(listOf(catSpiritueux, catVins, catBieres))
-
+        
         // === Produits ===
 
         val ProduitSn1 = Produit(

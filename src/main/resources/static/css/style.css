@@ -1,0 +1,13 @@
+body {
+    background: rgba(1, 20, 77, 0.89);
+}
+
+.navbar {
+    background-image: url("../img/bg_navbar.png");
+    background-size: contain;
+    height: 150px;
+}
+
+h1 {
+    color: #ffe3be;
+}
