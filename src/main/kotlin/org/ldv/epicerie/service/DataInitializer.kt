@@ -12,7 +12,8 @@ import org.springframework.stereotype.Component
 @Component
 class DataInitializer(
     private val categorieDAO: CategorieDAO,
-    private val produitDAO: ProduitDAO
+    private val produitDAO: ProduitDAO,
+
 
 ) : CommandLineRunner {
 
