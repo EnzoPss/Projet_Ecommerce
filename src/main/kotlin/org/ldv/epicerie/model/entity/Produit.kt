@@ -9,6 +9,7 @@ class Produit(
     @Column(nullable = false)
     val id_produit: Long?=null,
     var nom_produit: String,
+    var stock_produit: Long,
     var description_produit: String,
     var prix_produit: Double,
     var lienImage_produit: String,

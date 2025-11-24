@@ -42,7 +42,8 @@ class DataInitializer(
             description_produit = "numéro 1 de notre collection de spiritueux",
             prix_produit = 29.99,
             lienImage_produit = "https://example.com/images/montre-connectee.jpg",
-            categorie = catSpiritueux
+            stock_produit = 1,
+            categorie = catSpiritueux,
         )
 
          val ProduitVn1 = Produit(
@@ -50,7 +51,8 @@ class DataInitializer(
             description_produit = "numéro 1 de notre collection de vins",
             prix_produit = 29.99,
             lienImage_produit = "https://example.com/images/montre-connectee.jpg",
-            categorie = catVins
+             stock_produit = 1,
+            categorie = catVins,
         )
 
 

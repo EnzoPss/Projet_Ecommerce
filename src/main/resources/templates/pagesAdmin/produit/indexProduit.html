@@ -1,0 +1,42 @@
+<!doctype html>
+<html th:replace="base :: html" lang="fr" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="content">
+    <main class="py-5">
+        <div class="container">
+            <h1 class="mb-5 text-center">Administration des produits</h1>
+
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>Catégories</h1>
+                <a th:href="@{/Ecommerce_Lepicerie/admin/produit/create}" class="btn btn-success">+ Nouveau produit</a>
+            </div>
+
+
+            <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="produit : ${produits}">
+                    <td th:text="${produit.id_produit}"></td>
+                    <td th:text="${produit.nom_produit}"></td>
+                    <td>
+                        <a th:href="@{'/Ecommerce_Lepicerie/admin/produits/' +${produit.id_produit}}" class="btn btn-warning btn-sm me-2">Afficher</a>
+                        <a th:href="@{'/Ecommerce_Lepicerie/admin/produits/edit/' +${produit.id_produit}}" class="btn btn-warning btn-sm me-2">Modifier</a>
+                        <a th:href="@{'/Ecommerce_Lepicerie/admin/produits/delete/' + ${produit.id_produit}}" class="btn btn-danger btn-sm"
+                           onclick="return confirm('Supprimer ce produit ?');">Supprimer</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+
+</html>

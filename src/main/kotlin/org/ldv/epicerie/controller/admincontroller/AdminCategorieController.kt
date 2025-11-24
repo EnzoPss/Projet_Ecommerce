@@ -12,7 +12,7 @@ class AdminCategorieController(
 
 ) {
 
-    @GetMapping("/Ecommerce_Lepicerie/admin/categorie")
+    @GetMapping("/Ecommerce_Lepicerie/admin/categories")
     fun index(model: Model):String {
         val categories = categorieDAO.findAll()
         model.addAttribute("categories", categories)

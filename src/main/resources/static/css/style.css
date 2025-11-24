@@ -1,5 +1,6 @@
 body {
-    background: rgba(1, 20, 77, 0.89);
+    background: linear-gradient(rgba(1, 20, 77, 0.89), rgba(115, 101, 66, 0.89));
+    background-blend-mode: lighten;
 }
 
 .navbar {
