@@ -4,15 +4,23 @@ package org.ldv.epicerie.service
 
 import org.ldv.epicerie.model.dao.CategorieDAO
 import org.ldv.epicerie.model.dao.ProduitDAO
+import org.ldv.epicerie.model.dao.RoleDAO
+import org.ldv.epicerie.model.dao.UtilisateurDAO
 import org.ldv.epicerie.model.entity.Categorie
 import org.ldv.epicerie.model.entity.Produit
+import org.ldv.epicerie.model.entity.Role
+import org.ldv.epicerie.model.entity.Utilisateur
 import org.springframework.boot.CommandLineRunner
+import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Component
 
 @Component
 class DataInitializer(
     private val categorieDAO: CategorieDAO,
     private val produitDAO: ProduitDAO,
+    var roleDAO: RoleDAO,
+    var utilisateurDAO: UtilisateurDAO,
+    var passwordEncoder: PasswordEncoder,
 
 
 ) : CommandLineRunner {
@@ -24,6 +32,38 @@ class DataInitializer(
             println("ℹ️ Données déjà présentes, initialisation ignorée.")
             return
         }
+
+        // === Roles ===
+        val roleAdmin = Role(
+            nom_role = "ADMIN"
+        )
+        val roleClient = Role(
+            nom_role = "CLIENT"
+        )
+        roleDAO.saveAll(listOf(roleAdmin, roleClient))
+
+
+        // === Utilisateurs ===
+        val admin = Utilisateur(
+            id_utilisateur = null,
+            nom_utilisateur = "Admin",
+            prenom_utilisateur = "Admin",
+            email_utilisateur = "admin@admin.com",
+            mdp_utilisateur = passwordEncoder.encode("admin123"), // mot de passe hashé
+            role = roleAdmin
+        )
+
+        val client = Utilisateur(
+            id_utilisateur = null,
+            nom_utilisateur = "Client",
+            prenom_utilisateur = "Client",
+            email_utilisateur = "client@client.com",
+            mdp_utilisateur = passwordEncoder.encode("client123"), // mot de passe hashé
+            role = roleClient
+        )
+        utilisateurDAO.saveAll(listOf(admin, client))
+
+
 
         println("🚀 Initialisation des données...")
 

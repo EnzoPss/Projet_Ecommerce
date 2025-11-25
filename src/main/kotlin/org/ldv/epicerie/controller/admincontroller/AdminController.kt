@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping
 
 @Controller
 class AdminController {
-    @GetMapping("/Ecommerce_Lepicerie/admin")
+    @GetMapping("/Ecommerce_Lepicerie/admin/dashboard")
     fun accueil():String{
         return "pagesAdmin/dashboard"
     }

@@ -9,7 +9,7 @@ class Commentaire(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    val id_commentaire: Long,
+    val id_commentaire: Long? = null,
     var texte_commentaire: String,
     val date_commentaire: Date,
 

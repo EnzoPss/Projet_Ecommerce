@@ -7,7 +7,7 @@ class MotCles(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    val id_motCles: Long,
+    val id_motCles: Long? = null,
     val text_motCles: String,
 
     //Association Many to Many avec Produit

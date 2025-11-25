@@ -9,7 +9,7 @@ class Commande(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    val id_commande: Long,
+    val id_commande: Long? = null,
     val date_commande: Date,
     var status_commande: String,
     var prixTotal_commande: Double,

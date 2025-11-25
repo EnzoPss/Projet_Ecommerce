@@ -7,11 +7,11 @@ class Utilisateur(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    val id_utilisateur: Long,
+    val id_utilisateur: Long? = null,
     var nom_utilisateur: String,
+    var prenom_utilisateur: String,
     var mdp_utilisateur: String,
     var email_utilisateur: String,
-    var adresse_utilisateur: String,
 
     //relation to Commande
     @OneToMany(mappedBy = "utilisateur",cascade = [CascadeType.ALL], orphanRemoval = true)

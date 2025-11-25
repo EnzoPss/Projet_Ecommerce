@@ -7,7 +7,7 @@ class Paiement(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    val id_paiement: Long,
+    val id_paiement: Long? = null,
     var mode_paiement: String,
     var status_paiement: String,
 

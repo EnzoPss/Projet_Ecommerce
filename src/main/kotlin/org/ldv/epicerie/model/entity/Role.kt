@@ -7,7 +7,7 @@ class Role(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    val id_role: Long,
+    val id_role: Long? = null,
     var nom_role: String,
 
     @OneToMany(mappedBy = "role",cascade = [CascadeType.ALL], orphanRemoval = true)

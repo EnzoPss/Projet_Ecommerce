@@ -25,11 +25,11 @@ class SecurityConfig {
             .csrf { it.disable() } //TODO Retirer cette ligne
             //Restriction des endpoints en fonction du role
             .authorizeHttpRequests {
-                it.requestMatchers("/**","/Ecommerce_Lepicerie", "/Ecommerce_Lepicerie/register", "/Ecommerce_Lepicerie/login", "/css/**", "/js/**", "/img/**", "/favicon.ico").permitAll()
+                it.requestMatchers("/Ecommerce_Lepicerie", "/Ecommerce_Lepicerie/register", "/Ecommerce_Lepicerie/login", "/css/**", "/js/**", "/img/**", "/favicon.ico").permitAll()
                     // Autoriser l'accès pour les utilisateurs avec le rôle "ADMIN" à /admin/**
-                    //.requestMatchers("/Ecommerce_Lepicerie/admin/**").hasRole("ADMIN")
+                    .requestMatchers("/Ecommerce_Lepicerie/admin/**").hasRole("ADMIN")
                     // Autoriser l'accès pour les utilisateurs avec le rôle "CLIENT" à /client/**
-                    //.requestMatchers("/Ecommerce_Lepicerie/client/**").hasRole("CLIENT")
+                    .requestMatchers("/Ecommerce_Lepicerie/client/**").hasRole("CLIENT")
                     // Toutes les autres requêtes doivent être authentifiées
                     .anyRequest().authenticated()
 
