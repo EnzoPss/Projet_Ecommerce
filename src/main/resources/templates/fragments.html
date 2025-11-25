@@ -14,54 +14,94 @@
 
         <nav class="navbar navbar-expand-lg">
             <div class="container text-center">
-                <a class="navbar-brand" th:href="@{/Ecommerce_Lepicerie}" >
-                    <img th:src="@{img/logo_bg.png}" alt="logo" width="150" class="d-inline-block align-text-top">
+                <a class="navbar-brand" th:href="@{/Ecommerce_Lepicerie}">
+                    <img th:src="@{img/logoT.png}" alt="logo" width="150" class="d-inline-block align-text-top">
                 </a>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Rechercher">
-                    <button class="btn btn-outline-light" type="submit">Chercher</button>
-                </form>
-<!--                <ul class="navbar-nav me-auto">-->
-<!--                    <li class="nav-item">-->
-<!--                        <a class="nav-link text-dark" href="panier.html"><i class="bi bi-cart2"></i></a>-->
-<!--                    </li>-->
-<!--                    <li class="nav-item">-->
-<!--                        <a class="nav-link text-dark" href="profil.html"><i class="bi bi-person-fill"></i></a>-->
-<!--                    </li>-->
-<!--                </ul>-->
-            </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Rechercher">
+                        <button class="btn btn-outline-dark" type="submit">Chercher</button>
+                    </form>
+                </div>
+
+                <div class="col">
+                    <a href="#" class="btn btn-outline-dark">Spiritueux</a>
+                </div>
+                <div class="col">
+                    <a href="#" class="btn btn-outline-dark">Vins</a>
+                </div>
+                <div class="col">
+                    <a href="#" class="btn btn-outline-dark">Bières</a>
+                </div>
+
             </div>
         </nav>
 
+
+
     </header>
-
-
 </div>
 
+<div th:fragment="footer" class="container-fluid">
+    <footer class="row bg-light text-dark py-2">
+        <div class="container-fluid">
 
-<div th:fragment="footer" class="container-fluid bg-dark">
-    <footer class="row" style="color: aliceblue">
+            <!-- LIGNE 1 : LOGO CENTRAL -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-auto text-center">
+                    <a href="#">
+                        <img th:src="@{/img/logoT.png}" alt="Logo" class="img-fluid" style="max-height: 100px;">
+                    </a>
+                </div>
+            </div>
 
-        <div class="col">
+            <!-- LIGNE 2 : LOGO 2 + LIENS + CONTACT -->
+            <div class="row text-start justify-content-between px-5">
 
-        <h5>Copyright</h5>
-        <p>........<br>.....................<br>......</p>
+                <!-- Logo 2 -->
+                <div class="col-md-4 mb-3 d-flex flex-column align-items-start">
+                    <a href="#">
+                        <img th:src="@{/img/logoComplet.png}" alt="Logo" class="img-fluid mb-2" >
+                    </a>
+                </div>
+
+                <!-- Liens Découvrir -->
+                <div class="col-md-4 mb-3">
+                    <h6 class="text-uppercase fw-bold mb-3">Découvrir</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-dark text-decoration-none">Spiritueux</a></li>
+                        <li><a href="#" class="text-dark text-decoration-none">Vins</a></li>
+                        <li><a href="#" class="text-dark text-decoration-none">Biere</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Réseaux -->
+                <div class="col-md-4 mb-3">
+                    <h6 class="text-uppercase fw-bold mb-3">Nous contacter</h6>
+                    <p class="mb-1 text-dark">contact@epicerie.com</p>
+                    <p class="mb-3 text-dark">+33 9 87 65 43 21</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-dark fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-dark fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-dark fs-5"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- MENTIONS LEGALES -->
+            <div class="text-center text-dark pt-3 border-top" style="font-size: 0.8rem;">
+                © 2025 L'épicerie. Tous droits réservés.
+                <a href="#" class="text-dark text-decoration-none">Mentions légales</a> |
+                <a href="#" class="text-dark text-decoration-none">Politique de confidentialité</a>
+            </div>
 
         </div>
-
-        <div class="col">
-
-        <h5>Contactez-nous</h5>
-        
-
-        </div>
-
     </footer>
 
-
 </div>
+
 
 
 </body>
