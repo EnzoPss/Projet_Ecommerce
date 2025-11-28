@@ -13,7 +13,7 @@
         <!-- SECTION 1 : LOGO PRINCIPAL CENTRÉ -->
         <div class="container-fluid d-flex flex-column align-items-center bg-body-tertiary py-2">
             <a class="navbar-brand mt-2" href="#">
-                <img th:src="@{/img/logo/MC-centre.png}" alt="Logo" class="img-fluid" style="max-height: 150px;">
+                <img th:src="@{/img/logoComplet.png}" alt="Logo" class="img-fluid" style="max-height: 150px;">
             </a>
         </div>
 
@@ -23,11 +23,34 @@
 
                 <!-- PETIT LOGO GAUCHE -->
                 <a class="navbar-brand d-flex align-items-center" href="/e-commerce">
-                    <img th:src="@{/img/logo/Maison_Célisandre_BlackLogo.png}"
+                    <img th:src="@{/img/logoT.png}"
                          alt="Logo petit"
                          class="img-fluid"
-                         style="max-height: 60px;">
+                         style="max-height: 80px;">
                 </a>
+
+                <!-- SEARCH + ICONES -->
+                <div class="d-flex align-items-center gap-4">
+
+                    <!-- ICÔNE LOGIN AVEC DROPDOWN -->
+                    <div class="dropdown">
+                        <a class="text-dark fs-5 " href="#" data-bs-toggle="dropdown">
+                            <i class="bi bi-person"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="/e-commerce/login">Connexion</a></li>
+                            <li><a class="dropdown-item" href="/e-commerce/register">Créer un compte</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/e-commerce/profil">Profil</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- PANIER -->
+                    <a class="text-dark fs-5" data-bs-toggle="offcanvas" href="#panierSidebar">
+                        <i class="bi bi-bag"></i>
+                    </a>
+
+                </div>
 
                 <!-- TOGGLER MOBILE -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
@@ -40,9 +63,10 @@
                     <!-- MENU CENTRÉ -->
                     <div class="mx-auto d-flex gap-6">
                         <ul class="navbar-nav d-flex gap-4">
-                            <li class="nav-item"><a class="nav-link active fw-semibold" href="#">Découvrir</a></li>
-                            <li class="nav-item"><a class="nav-link fw-semibold" href="#">Fragrances</a></li>
-                            <li class="nav-item"><a class="nav-link fw-semibold" href="#">Collections</a></li>
+                            <li class="nav-item"><a class="nav-link active fw-semibold" href="#">Tous nos produits</a></li>
+                            <li class="nav-item"><a class="nav-link fw-semibold" href="#">Spiritueux</a></li>
+                            <li class="nav-item"><a class="nav-link fw-semibold" href="#">Vins</a></li>
+                            <li class="nav-item"><a class="nav-link fw-semibold" href="#">Bières</a></li>
                         </ul>
                     </div>
 
@@ -54,24 +78,6 @@
                             <input class="form-control ps-4" type="search" placeholder="Rechercher…" style="min-width: 220px;">
                             <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-2 text-muted"></i>
                         </form>
-
-                        <!-- ICÔNE LOGIN AVEC DROPDOWN -->
-                        <div class="dropdown">
-                            <a class="text-dark fs-5 " href="#" data-bs-toggle="dropdown">
-                                <i class="bi bi-person"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="/e-commerce/login">Connexion</a></li>
-                                <li><a class="dropdown-item" href="/e-commerce/register">Créer un compte</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="/e-commerce/profil">Profil</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- PANIER -->
-                        <a class="text-dark fs-5" data-bs-toggle="offcanvas" href="#panierSidebar">
-                            <i class="bi bi-bag"></i>
-                        </a>
 
                     </div>
 

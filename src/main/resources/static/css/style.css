@@ -8,8 +8,6 @@ body {
             url("../img/header_bg.png") no-repeat right / contain, /* Image */
             radial-gradient(circle, rgba(245, 245, 245, 1) 0%, rgb(204, 204, 204) 100%) no-repeat right / contain; /* Dégradé */
     height: 150px;
-
-
 }
 
 h1 {
